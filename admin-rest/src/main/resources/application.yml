@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: admin-rest
+
+
+
+# Application Name
+
+# logging path
+logging:
+  file:
+    path: ./logs
+  level:
+    tech.hutu: debug
+    org.springframework: warn
+server:
+  port: 8080
+
+sofa:
+  boot:
+    rpc:
+      registryAddress: zookeeper://127.0.0.1:2181
