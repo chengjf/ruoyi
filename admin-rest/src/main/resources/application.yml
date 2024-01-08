@@ -13,10 +13,24 @@ logging:
   level:
     tech.hutu: debug
     org.springframework: warn
+    com.alipay.sofa: debug
+
 server:
   port: 8080
 
-sofa:
-  boot:
-    rpc:
-      registryAddress: zookeeper://127.0.0.1:2181
+dubbo:
+  application:
+    id: system-service
+    name: system-service
+    owner: chengjf
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: hessian2
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    check: false
+    register: false
+  consumer:
+    check: false
+

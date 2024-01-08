@@ -1,8 +1,7 @@
 package tech.hutu.system.service.impl;
 
-import com.alipay.sofa.runtime.api.annotation.SofaService;
-import com.alipay.sofa.runtime.api.annotation.SofaServiceBinding;
 import lombok.RequiredArgsConstructor;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.stereotype.Service;
 import tech.hutu.system.api.SysUserApi;
 import tech.hutu.system.api.pojo.SysUserDTO;
@@ -12,8 +11,8 @@ import tech.hutu.system.mapper.SysUser2Mapper;
 import tech.hutu.system.mapper.SysUserMapper;
 
 @RequiredArgsConstructor
-@SofaService(interfaceType = SysUserApi.class, uniqueId = "sys-user-api", bindings = {@SofaServiceBinding(bindingType = "bolt")})
 @Service
+@DubboService
 public class SysUserApiImpl implements SysUserApi {
 
     private final SysUserMapper sysUserMapper;

@@ -96,18 +96,20 @@ logging:
   level:
     tech.hutu: debug
     org.springframework: warn
+    com.alipay: debug
 server:
   port: 0
   auto:
     start: true
 
-
-sofa:
-  boot:
-    rpc:
-      registryAddress: zookeeper://127.0.0.1:2181
-      enableAutoPublish: true
-
-
-
+dubbo:
+  application:
+    id: system-service
+    name: system-service
+    owner: chengjf
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: zookeeper://127.0.0.1:2181
 
